@@ -1,0 +1,110 @@
+*{
+	padding:0;
+	margin:0;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+	overflow-x:hidden;
+}
+nav{
+	display:flex;
+	background-color:purple;
+	justify-content:space-around;
+	height:50px;
+	align-items:center;
+}
+nav ul{
+	display:flex;
+	list-style:none;
+	width:40%; /* lebar 40% dari keseluruhan layar */
+	justify-content:space-between;
+}
+nav ul li a{
+	text-decoration:none;
+	color:white;
+	font-family: 'Montserrat', sans-serif;
+	font-size:1em;
+}
+nav div.logo{
+	font-family: 'Oswald', sans-serif;
+	color:yellow;
+	letter-spacing:2px;
+}
+.menu-toggle{
+	display:none;
+	flex-direction:column;
+	height:23px;
+	justify-content:space-between;
+	position:relative;
+}
+.menu-toggle span{
+	display:block;
+	width:28px;
+	height:3px;
+	background-color:white;
+	transition:all 0.5s;
+}
+.menu-toggle input{
+	position:absolute;
+	width:30px;
+	height:24px;
+	opacity:0;
+	left:-1px;
+	top:-1px;
+	cursor:pointer;
+	z-index:2;
+}
+
+/*Hamburger menu animate*/
+.menu-toggle span:nth-child(2){
+	transform-origin:0 0 ; /* pindahkan poros pemutaran ke kiri */
+}
+.menu-toggle span:nth-child(4){
+	transform-origin:0 100% ; /* pindahkan poros pemutaran ke kiri */
+}
+/* When input checkbox "checked" then find span in child number 2 */
+.menu-toggle input:checked ~ span:nth-child(2){
+	background-color:red;
+	transform:rotate(45deg)translate(1px,0);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+	background-color:red;
+	transform:rotate(-45deg)translate(1px,0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+	transform:scale(0);
+	opacity:0;
+}
+
+/*Responsive breakpoint tablet
+@media screen and (max-width:1023px){
+	nav ul{
+		width:50%;
+	}
+}
+*/
+/*Responsive break point ukuran mobile */
+@media screen and (max-width:1024px){
+	nav ul{
+		/*ketika tampilan mobile pindahkan menu ke kiri*/		
+		position:absolute;
+		right:0;
+		top:0;
+		width:60%;
+		background-color:#16869c;
+		height:100vh;
+		flex-direction:column;
+		justify-content:space-evenly;
+		align-items:center;
+		z-index:-1;
+		transform:translateX(100%);
+		transition:all 1s;
+	}
+	nav ul.slide{
+		transform:translateX(0);
+	}
+	.menu-toggle{
+		display:flex;
+	}
+}
