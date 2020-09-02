@@ -26,6 +26,13 @@ nav ul li a{
 	font-family: 'Montserrat', sans-serif;
 	font-size:1em;
 }
+nav ul li a:hover{
+	text-decoration:none;
+	color:yellow;
+	font-weight: bolder;
+	font-family: 'Montserrat', sans-serif;
+	font-size:1em;
+}
 nav div.logo{
 	font-family: 'Oswald', sans-serif;
 	color:yellow;
