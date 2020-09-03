@@ -81,9 +81,9 @@
 	});
 	//$('#dc_accordion').dcAccordion();
 	// End
-$(window).on('load',function(){
-	$('#loader_wrpper').delay(500).fadeOut();
-})
+//$(window).on('load',function(){
+//	$('#loader_wrpper').delay(500).fadeOut();
+//})
 	//Scroll_BAr
 if($(".scroll_auto").length) {
 	$(".scroll_auto").mCustomScrollbar({
